@@ -1,1 +1,0 @@
-console.log("Second temporary file of the project..");
