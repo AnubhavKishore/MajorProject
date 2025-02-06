@@ -1,6 +1,13 @@
 import React from "react";
 import Link from "next/link";
-
+import {
+    ClerkProvider,
+    SignInButton,
+    SignUpButton,
+    SignedIn,
+    SignedOut,
+    UserButton,
+} from '@clerk/nextjs'
 interface NavbarProps {
     title: string;
 }
@@ -18,10 +25,18 @@ const Navbar: React.FC<NavbarProps> = ({ title }) => {
             </div>
             <ul className="flex gap-4">
                 <li><Link href="/help" className="hover:underline">Help</Link></li>
-                <li><Link href="/signup" className="hover:underline">Sign Up</Link></li>
-                <li><Link href="/login" className="hover:underline">Login</Link></li>
+                <ClerkProvider>
+                    <SignedOut>
+                        <SignInButton />
+                        <SignUpButton />
+                    </SignedOut>
+                    <SignedIn>
+                        <UserButton />
+                    </SignedIn>
+                </ClerkProvider>
             </ul>
         </nav>
+
     );
 };
 

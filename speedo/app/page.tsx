@@ -4,7 +4,8 @@ import Navbar from "./navbar";
 export default function Home() {
   return (
     <>
-    <Navbar title="Speedo"/>
+    {/* <Navbar title="Speedo"/> */}
+    
     <div className="font-bold"> HOME</div>
     </>
   );
