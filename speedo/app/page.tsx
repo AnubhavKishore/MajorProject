@@ -5,7 +5,6 @@ export default function Home() {
   return (
     <>
     {/* <Navbar title="Speedo"/> */}
-    
     <div className="font-bold"> HOME</div>
     </>
   );
